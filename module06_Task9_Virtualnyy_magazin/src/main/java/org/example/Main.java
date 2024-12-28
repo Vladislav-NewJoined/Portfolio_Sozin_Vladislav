@@ -129,11 +129,11 @@ public class Main {
 
     // Метод для сохранения каталога в файл
     private static void saveCatalogToFile(List<Smartphone> catalog) {
-        try (FileWriter writer = new FileWriter("src/main/java/org/example/DataSource.txt")) {
+        try (FileWriter writer = new FileWriter("module06_Task9_Virtualnyy_magazin/src/main/java/org/example/DataSource.txt")) {
             for (Smartphone phone : catalog) {
                 writer.write(phone.toString() + "\n");
             }
-            System.out.println("Каталог товаров сохранен в файл: " + "src/main/java/org/example/DataSource.txt");
+            System.out.println("Каталог товаров сохранен в файл: " + "DataSource.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении каталога в файл: " + e.getMessage());
         }
@@ -141,10 +141,10 @@ public class Main {
 
     // Метод для сохранения электронной почты и пароля в файл
     private static void saveCredentialsToFile(String email, String password) {
-        try (FileWriter writer = new FileWriter("src/main/java/org/example/CustomersID.txt")) {
+        try (FileWriter writer = new FileWriter("module06_Task9_Virtualnyy_magazin/src/main/java/org/example/CustomersID.txt")) {
             writer.write("Email: " + email + "\n");
             writer.write("Password: " + password + "\n");
-            System.out.println("Электронная почта и пароль сохранены в файл: " + "src/main/java/org/example/CustomersID.txt");
+            System.out.println("Электронная почта и пароль сохранены в файл: " + "CustomersID.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении электронной почты и пароля в файл: " + e.getMessage());
         }
@@ -152,14 +152,14 @@ public class Main {
 
     // Метод для сохранения информации о покупке в файл корзины
     private static void savePurchaseInfoToFile(String id, List<Smartphone> catalog, int quantity, int totalSum) {
-        try (FileWriter writer = new FileWriter("src/main/java/org/example/ShoppingCart.txt")) {
+        try (FileWriter writer = new FileWriter("module06_Task9_Virtualnyy_magazin/src/main/java/org/example/ShoppingCart.txt")) {
             @SuppressWarnings("OptionalGetWithoutIsPresent") Smartphone selectedPhone = catalog.stream().filter(phone -> phone.getId().equals(id)).findFirst().get();
             writer.write("ID товара: " + id + "\n");
             writer.write("Название товара: " + selectedPhone.getName() + "\n");
             writer.write("Количество: " + quantity + "\n");
             writer.write("Цена товара: " + selectedPhone.getPrice() + " руб.\n");
             writer.write("Сумма к оплате: " + totalSum + " руб.\n");
-            System.out.println("Информация о покупке сохранена в файл: " + "src/main/java/org/example/ShoppingCart.txt");
+            System.out.println("Информация о покупке сохранена в файл: " + "ShoppingCart.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении информации о покупке в корзину: " + e.getMessage());
         }
@@ -168,7 +168,7 @@ public class Main {
     // Метод для очистки корзины
     private static void clearShoppingCart() {
         try {
-            Files.deleteIfExists(Paths.get("src/main/java/org/example/ShoppingCart.txt"));
+            Files.deleteIfExists(Paths.get("module06_Task9_Virtualnyy_magazin/src/main/java/org/example/ShoppingCart.txt"));
             System.out.println("Корзина очищена.");
         } catch (IOException e) {
             System.out.println("Ошибка при очистке корзины: " + e.getMessage());
