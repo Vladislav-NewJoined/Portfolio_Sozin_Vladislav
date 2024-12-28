@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Portfolio_Sozin_Vladislav_duplicate2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>module06_Task9_Virtualnyy_magazin</module>
+        <module>module07_Task10_Obrabotka_foto_s_pomoschyu_lyambd</module>
+        <module>module07_Task11_Virtualnyy_magazin_prodolzhenie</module>
+        <module>module08_Task6_Mnogopotocnost</module>
+        <module>module09_Task10_Telegram_bot_dlya_upravleniya_izobrazheniyami</module>
+        <module>module11_Task9_Protokol_HTTP</module>
+        <module>module12_Task7_MongoDB_Postgres</module>
+        <module>module14_Task5_Spring</module>
+        <module>module15_Task1_Poisk_rabotyi_i_prodvinyutyi_temy</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
