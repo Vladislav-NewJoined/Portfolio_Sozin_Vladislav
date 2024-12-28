@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static void main(String[] args) {
         System.out.println("""
                 Задание:\s
@@ -48,7 +49,7 @@ public class Main {
         }
 
         // Сохраняем каталог в файл DataSource
-        saveCatalogToFile(catalog, "src/main/java/org/example/DataSource.txt");
+        saveCatalogToFile(catalog);
 
         // Запрашиваем у пользователя электронную почту и пароль
         Scanner scanner = new Scanner(System.in);
@@ -58,8 +59,7 @@ public class Main {
         String password = scanner.nextLine();
 
         // Сохраняем электронную почту и пароль в файл
-        saveCredentialsToFile(email, password, "src/main/java/org/example/CustomersID.txt");
-//        saveCredentialsToFile(email, password, "src/main/java/org/example/CustomersID.txt");
+        saveCredentialsToFile(email, password);
 
         // Добавляем товары в корзину
         boolean validInput = false;
@@ -113,13 +113,13 @@ public class Main {
         System.out.println("Сумма к оплате: " + totalSum + " руб.");
 
         // Сохраняем информацию о покупке в файл корзины
-        savePurchaseInfoToFile(id, catalog, quantity, totalSum, "src/main/java/org/example/ShoppingCart.txt");
+        savePurchaseInfoToFile(id, catalog, quantity, totalSum);
 
         // Запрашиваем пользователя об очистке корзины
         System.out.print("\nХотите ли Вы очистить корзину? Ответьте 'да' или 'нет': ");
         String clearCartChoice = scanner.nextLine().trim().toLowerCase();
         if (clearCartChoice.equals("да")) {
-            clearShoppingCart("src/task6_9_1/ShoppingCart.txt");
+            clearShoppingCart();
         } else if (clearCartChoice.equals("нет")) {
             System.out.println("Корзина окончательно сформирована. Работа программы завершена.");
         } else {
@@ -128,47 +128,47 @@ public class Main {
     }
 
     // Метод для сохранения каталога в файл
-    private static void saveCatalogToFile(List<Smartphone> catalog, String filePath) {
-        try (FileWriter writer = new FileWriter(filePath)) {
+    private static void saveCatalogToFile(List<Smartphone> catalog) {
+        try (FileWriter writer = new FileWriter("src/main/java/org/example/DataSource.txt")) {
             for (Smartphone phone : catalog) {
                 writer.write(phone.toString() + "\n");
             }
-            System.out.println("Каталог товаров сохранен в файл: " + filePath);
+            System.out.println("Каталог товаров сохранен в файл: " + "src/main/java/org/example/DataSource.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении каталога в файл: " + e.getMessage());
         }
     }
 
     // Метод для сохранения электронной почты и пароля в файл
-    private static void saveCredentialsToFile(String email, String password, String filePath) {
-        try (FileWriter writer = new FileWriter(filePath)) {
+    private static void saveCredentialsToFile(String email, String password) {
+        try (FileWriter writer = new FileWriter("src/main/java/org/example/CustomersID.txt")) {
             writer.write("Email: " + email + "\n");
             writer.write("Password: " + password + "\n");
-            System.out.println("Электронная почта и пароль сохранены в файл: " + filePath);
+            System.out.println("Электронная почта и пароль сохранены в файл: " + "src/main/java/org/example/CustomersID.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении электронной почты и пароля в файл: " + e.getMessage());
         }
     }
 
     // Метод для сохранения информации о покупке в файл корзины
-    private static void savePurchaseInfoToFile(String id, List<Smartphone> catalog, int quantity, int totalSum, String filePath) {
-        try (FileWriter writer = new FileWriter(filePath)) {
-            Smartphone selectedPhone = catalog.stream().filter(phone -> phone.getId().equals(id)).findFirst().get();
+    private static void savePurchaseInfoToFile(String id, List<Smartphone> catalog, int quantity, int totalSum) {
+        try (FileWriter writer = new FileWriter("src/main/java/org/example/ShoppingCart.txt")) {
+            @SuppressWarnings("OptionalGetWithoutIsPresent") Smartphone selectedPhone = catalog.stream().filter(phone -> phone.getId().equals(id)).findFirst().get();
             writer.write("ID товара: " + id + "\n");
             writer.write("Название товара: " + selectedPhone.getName() + "\n");
             writer.write("Количество: " + quantity + "\n");
             writer.write("Цена товара: " + selectedPhone.getPrice() + " руб.\n");
             writer.write("Сумма к оплате: " + totalSum + " руб.\n");
-            System.out.println("Информация о покупке сохранена в файл: " + filePath);
+            System.out.println("Информация о покупке сохранена в файл: " + "src/main/java/org/example/ShoppingCart.txt");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении информации о покупке в корзину: " + e.getMessage());
         }
     }
 
     // Метод для очистки корзины
-    private static void clearShoppingCart(String filePath) {
+    private static void clearShoppingCart() {
         try {
-            Files.deleteIfExists(Paths.get(filePath));
+            Files.deleteIfExists(Paths.get("src/main/java/org/example/ShoppingCart.txt"));
             System.out.println("Корзина очищена.");
         } catch (IOException e) {
             System.out.println("Ошибка при очистке корзины: " + e.getMessage());
@@ -178,9 +178,13 @@ public class Main {
 
 // Класс представляющий смартфон
 class Smartphone {
+    @SuppressWarnings("FieldMayBeFinal")
     private String id;
+    @SuppressWarnings("FieldMayBeFinal")
     private String name;
+    @SuppressWarnings("FieldMayBeFinal")
     private int price;
+    @SuppressWarnings("FieldMayBeFinal")
     private int quantity;
 
     public Smartphone(String name, int price, int quantity, String id) {
