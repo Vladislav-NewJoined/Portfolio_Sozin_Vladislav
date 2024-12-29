@@ -1,6 +1,6 @@
 package org.example.utils;
 
-import /*module07_Task10_Obrabotka_foto_s_pomoschyu_lyambd.*//*src.main.java.*/org.example.functions.ImageOperation;
+import org.example.functions.ImageOperation;
 
 import java.awt.image.BufferedImage;
 
