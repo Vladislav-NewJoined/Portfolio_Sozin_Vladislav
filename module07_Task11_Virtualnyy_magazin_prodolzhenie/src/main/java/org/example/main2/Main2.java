@@ -1,20 +1,16 @@
-package org.example.Main3;
+package org.example.main2;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 
-public class Main3 {
+public class Main2 {
     public static void main(String[] args) throws Exception {
         System.out.println("""
                 Задание:\s
                 Модуль 7. Взаимодействие с API. Задание №11. Проект:\s
-                    3. Реализовать навигационное меню состоящее из:\s
-                         Каталог
-                         Корзина
-                         Оформление заказа
-                         Назад\s
+                    2. Реализовать сортировку товаров по цене,  фильтрацию относительно доступности товара в текущий
+                       момент для заказа.\s
 
                 Решение:\s""");
 
@@ -52,53 +48,8 @@ public class Main3 {
                 .forEach(p -> System.out.printf("Наименование: %s, Цена: %d, Кол-во на складе: %d.%n",
                         p.getName(), p.getPrice(), p.getQtyInStock())
                 );
-
-        System.out.println("\nРЕАЛИЗУЕМ НАВИГАЦИОННОЕ МЕНЮ, СОСТОЯЩЕЕ ИЗ РАЗДЕЛОВ:");
-        System.out.println("ПОЛНЫЙ КАТАЛОГ:");
-        catalog.forEach(p -> System.out.printf("Наименование: %s, Цена: %d, Кол-во на складе: %d.%n",
-                p.getName(), p.getPrice(), p.getQtyInStock())
-        );
-        System.out.println();
-
-        String name = "Samsung Galaxy S100";
-        int count = 2;
-
-        System.out.printf("КОРЗИНА: \n(Выбрано:  %s- %d шт.)%n", name, count);
-
-// нашли продукт
-        Products2 selected = catalog.stream()
-                .filter(product -> Objects.equals(product.getName(), name))
-                .filter(product -> product.getQtyInStock() >= count)
-                .findFirst()
-                .orElseThrow(() -> new IllegalStateException("Товар не найден"));
-// изменили состояние при заказе
-        selected.setQtyOrdered(count);
-// распечатали содержимое корзины
-        catalog
-                .stream()
-                .filter(product -> product.getQtyOrdered() > 0)
-                .forEach(p -> System.out.printf("Наименование: %s, Цена: %d, Кол-во заказа: %d.%n",
-                        p.getName(), p.getPrice(), p.getQtyOrdered()
-                ));
-        System.out.println();
-
-        System.out.println("ОФОРМЛЕНИЕ ЗАКАЗА:");
-        catalog.stream()
-                .filter(product -> Objects.equals(product.getName(), name)) // product.getQtyOrdered() > 0
-                .forEach(p -> System.out.printf("Наименование: %s, Цена: %d, Кол-во заказа: %d, Сумма к оплате: %d руб.%n",
-                        p.getName(), p.getPrice(), p.getQtyOrdered(), p.getPrice() * p.getQtyOrdered()
-                ));
-        System.out.println();
-// изменили состояние после оформления заказа, т.е. покупки
-        selected.sell();
-
-        System.out.println("НАЗАД: \n(Samsung Galaxy S100 на складе осталось 5, а до заказа было 7)");
-        catalog.forEach(p -> System.out.printf("Наименование: %s, Цена: %d, Кол-во на складе: %d.%n",
-                p.getName(), p.getPrice(), p.getQtyInStock())
-        );
     }
 }
-
 
 class Products2 {
     private String name;
@@ -153,10 +104,6 @@ public String toString() {
             ", qtyInStock=" + qtyInStock +
             ", qtyOrdered=" + qtyOrdered +
             '}';
-}
-
-public void sell() {
-    this.qtyInStock -= this.qtyOrdered;
-    this.qtyOrdered = 0;
     }
 }
+
