@@ -12,11 +12,6 @@
     <artifactId>module11_Task9_Protokol_HTTP</artifactId>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.squareup.retrofit2</groupId>-->
-<!--            <artifactId>converter-gson</artifactId>-->
-<!--            <version>2.11.0</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
