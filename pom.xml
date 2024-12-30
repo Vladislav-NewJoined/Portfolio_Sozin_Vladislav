@@ -18,6 +18,7 @@
         <module>module12_Task7_MongoDB_Postgres</module>
         <module>module14_Task5_Spring</module>
         <module>module15_Task1_Poisk_rabotyi_i_prodvinyutyi_temy</module>
+        <module>module01_Task3_Tetris</module>
     </modules>
 
     <properties>
