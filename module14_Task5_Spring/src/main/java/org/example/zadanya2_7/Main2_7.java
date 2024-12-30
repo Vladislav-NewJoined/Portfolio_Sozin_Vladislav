@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.example.zadanya2_7.services.QuoteService;
 
+import static java.awt.SystemColor.text;
+
 // Здесь выполнять инициализацию проекта: https://start.spring.io/
 
 // Здесь инструкции, как работать с Postman:

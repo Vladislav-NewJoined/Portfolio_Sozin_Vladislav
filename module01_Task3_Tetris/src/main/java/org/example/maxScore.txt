@@ -1,2 +1,2 @@
 Max Score is: 
-3
+1
