@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="module03_Task10_Zmeyka" />
+        <module name="module07_Task11_Virtualnyy_magazin_prodolzhenie" />
+        <module name="module07_Task10_Obrabotka_foto_s_pomoschyu_lyambd" />
+        <module name="module12_Task7_MongoDB_Postgres" />
+        <module name="module15_Task1_Poisk_rabotyi_i_prodvinyutyi_temy" />
+        <module name="module11_Task9_Protokol_HTTP" />
+        <module name="module06_Task9_Virtualnyy_magazin" />
+        <module name="module14_Task5_Spring" />
+        <module name="module16_TEST_BI-analitik_Power_BI" />
+        <module name="module09_Task10_Telegram_bot_dlya_upravleniya_izobrazheniyami" />
+        <module name="module04_Task6_Krestiki-noliki" />
+        <module name="module01_Task3_Tetris" />
+        <module name="module04_Task6_Kalkulyator" />
+        <module name="module08_Task6_Mnogopotocnost" />
+      </profile>
+      <profile name="Annotation profile for 250407_1252_Portfolio_Sozin_Vladislav_edit" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="module17_TEST_Calorie-Tracker" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="module14_Task5_Spring" options="-parameters" />
+      <module name="module17_TEST_Calorie-Tracker" options="-parameters" />
+    </option>
+  </component>
+</project>

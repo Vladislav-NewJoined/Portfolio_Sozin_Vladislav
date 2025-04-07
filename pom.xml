@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Portfolio_Sozin_Vladislav_duplicate2</artifactId>
+    <artifactId>Portfolio_Sozin_Vladislav</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <packaging>pom</packaging>
     <modules>
         <module>module06_Task9_Virtualnyy_magazin</module>
@@ -22,6 +23,9 @@
         <module>module03_Task10_Zmeyka</module>
         <module>module04_Task6_Krestiki-noliki</module>
         <module>module04_Task6_Kalkulyator</module>
+        <module>module16_TEST_BI-analitik_Power_BI</module>
+        <module>module17_TEST_Calorie-Tracker</module>
+        <module>module17_TEST_Calorie-Tracker</module>
     </modules>
 
     <properties>

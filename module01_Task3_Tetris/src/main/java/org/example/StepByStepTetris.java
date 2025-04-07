@@ -7,14 +7,19 @@ import java.awt.event.KeyListener;
 import java.io.*;
 
 public class StepByStepTetris {
+    public static void main(String[] args) {
+        new org.example.StepByStepTetris();
+    }
+
     int score = 0;
+
     JLabel scoreJLabel = new JLabel() {{
         setHorizontalAlignment(CENTER);
         setText("Score: " + score);
     }};
-
     int NumCurrentBrick = 0;
     brick[] bricks = new brick[1000];
+
     Field field = new Field();
 
     {
@@ -43,10 +48,6 @@ public class StepByStepTetris {
         });
 
         field.paintAllBrick(bricks);
-    }
-
-    public static void main(String[] args) {
-        new org.example.StepByStepTetris();
     }
 
     void step(String dir_) {
