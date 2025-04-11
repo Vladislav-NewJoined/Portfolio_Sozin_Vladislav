@@ -26,6 +26,7 @@
         <module>module16_TEST_BI-analitik_Power_BI</module>
         <module>module17_TEST_Calorie-Tracker</module>
         <module>module17_TEST_Calorie-Tracker</module>
+        <module>module18_TEST_Email_Rassylka_cherez_Telegram_bot</module>
     </modules>
 
     <properties>

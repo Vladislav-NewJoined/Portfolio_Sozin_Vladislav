@@ -10,6 +10,7 @@
         <module name="module03_Task10_Zmeyka" />
         <module name="module07_Task11_Virtualnyy_magazin_prodolzhenie" />
         <module name="module07_Task10_Obrabotka_foto_s_pomoschyu_lyambd" />
+        <module name="module18_TEST_Email_Rassylka_cherez_Telegram_bot" />
         <module name="module12_Task7_MongoDB_Postgres" />
         <module name="module15_Task1_Poisk_rabotyi_i_prodvinyutyi_temy" />
         <module name="module11_Task9_Protokol_HTTP" />
@@ -22,7 +23,7 @@
         <module name="module04_Task6_Kalkulyator" />
         <module name="module08_Task6_Mnogopotocnost" />
       </profile>
-      <profile name="Annotation profile for 250407_1252_Portfolio_Sozin_Vladislav_edit" enabled="true">
+      <profile name="Annotation profile for Portfolio_Sozin_Vladislav" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
