@@ -10,7 +10,6 @@
         <module name="module03_Task10_Zmeyka" />
         <module name="module07_Task11_Virtualnyy_magazin_prodolzhenie" />
         <module name="module07_Task10_Obrabotka_foto_s_pomoschyu_lyambd" />
-        <module name="module18_TEST_Email_Rassylka_cherez_Telegram_bot" />
         <module name="module12_Task7_MongoDB_Postgres" />
         <module name="module15_Task1_Poisk_rabotyi_i_prodvinyutyi_temy" />
         <module name="module11_Task9_Protokol_HTTP" />
@@ -18,12 +17,13 @@
         <module name="module14_Task5_Spring" />
         <module name="module16_TEST_BI-analitik_Power_BI" />
         <module name="module09_Task10_Telegram_bot_dlya_upravleniya_izobrazheniyami" />
+        <module name="TelegramMailer" />
         <module name="module04_Task6_Krestiki-noliki" />
         <module name="module01_Task3_Tetris" />
         <module name="module04_Task6_Kalkulyator" />
         <module name="module08_Task6_Mnogopotocnost" />
       </profile>
-      <profile name="Annotation profile for Portfolio_Sozin_Vladislav" enabled="true">
+      <profile name="Annotation profile for Portfolio_Sozin_Vladislav2" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -33,6 +33,9 @@
         <module name="module17_TEST_Calorie-Tracker" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="module18_TEST_Email_Rassylka_cherez_Telegram_bot" target="23" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

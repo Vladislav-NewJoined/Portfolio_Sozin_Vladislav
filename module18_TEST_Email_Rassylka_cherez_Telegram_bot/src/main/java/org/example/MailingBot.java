@@ -1,6 +1,7 @@
 package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -9,6 +10,12 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class MailingBot extends TelegramLongPollingBot {
+    private final String BOT_TOKEN = "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64";
+    
+    public MailingBot() {
+        super(new DefaultBotOptions(), "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64");
+    }
+    
     private final List<String> emailList = new ArrayList<>();
     private boolean waitingForEmails = false;
     private boolean waitingForMessage = false;
@@ -19,10 +26,7 @@ public class MailingBot extends TelegramLongPollingBot {
         return "BES_Mailing_bot";
     }
 
-    @Override
-    public String getBotToken() {
-        return "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64";
-    }
+    
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -35,11 +39,21 @@ public class MailingBot extends TelegramLongPollingBot {
 
         if ("/start".equals(userInput)) {
             resetState(chatId);
-        } else if (waitingForEmails) {
+            return;
+        } 
+        
+        if (waitingForEmails) {
             processEmailList(chatId, userInput);
-        } else if (waitingForMessage) {
+            return;
+        } 
+        
+        if (waitingForMessage) {
             processMessage(chatId, userInput);
+            return;
         }
+        
+        // Если не распознали команду, предложим начать сначала
+        sendMessage(chatId, "Используйте команду /start для начала работы");
     }
 
     private void resetState(long chatId) {

@@ -1,3 +1,8 @@
+<dependency>
+    <groupId>org.telegram</groupId>
+    <artifactId>telegrambots</artifactId>
+    <version>6.0.1</version> <!-- Check for the latest version -->
+</dependency>
 # Этап сборки
 FROM maven:3.8.6-openjdk-17 AS build
 WORKDIR /app
