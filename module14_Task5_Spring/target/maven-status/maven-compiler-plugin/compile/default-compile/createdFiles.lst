@@ -1,0 +1,17 @@
+org\example\zadanye8\Main8.class
+org\example\zadanye8\repositories\ChatRepository.class
+org\example\zadanye8\services\BashParser.class
+org\example\zadanya2_7\repositories\QuoteRepository.class
+org\example\zadanya2_7\services\QuoteService.class
+org\example\zadanye8\controllers\ApiController.class
+org\example\zadanye8\repositories\QuoteRepository.class
+org\example\zadanye8\services\QuoteService.class
+org\example\zadanya2_7\Main2_7.class
+org\example\zadanya2_7\models\Quote.class
+org\example\zadanya2_7\services\BashParser.class
+org\example\zadanye1\Main1.class
+org\example\zadanye8\models\Quote.class
+org\example\zadanya2_7\models\Chat.class
+org\example\zadanya2_7\repositories\ChatRepository.class
+org\example\zadanye8\models\Chat.class
+org\example\zadanye8\controllers\BotController.class

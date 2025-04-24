@@ -1,0 +1,10 @@
+org\example\Bot.class
+org\example\utils\PhotoMessageUtils.class
+org\example\Main.class
+org\example\utils\ImageUtils.class
+org\example\commands\AppBotCommand.class
+org\example\utils\RgbMaster.class
+org\example\Bot$1.class
+org\example\commands\BotCommonCommands.class
+org\example\functions\FilterOperation.class
+org\example\functions\ImageOperation.class

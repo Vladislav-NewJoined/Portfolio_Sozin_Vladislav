@@ -7,7 +7,7 @@
 
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>Portfolio_Sozin_Vladislav4_Git</artifactId>
+        <artifactId>Portfolio_Sozin_Vladislav</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 

@@ -23,7 +23,7 @@
         <module name="module04_Task6_Kalkulyator" />
         <module name="module08_Task6_Mnogopotocnost" />
       </profile>
-      <profile name="Annotation profile for Portfolio_Sozin_Vladislav2" enabled="true">
+      <profile name="Annotation profile for Portfolio_Sozin_Vladislav4_Git" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

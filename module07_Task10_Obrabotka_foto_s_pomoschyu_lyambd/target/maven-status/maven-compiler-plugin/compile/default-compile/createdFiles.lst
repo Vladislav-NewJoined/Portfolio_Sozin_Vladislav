@@ -1,0 +1,5 @@
+org\example\Main.class
+org\example\utils\ImageUtils.class
+org\example\FilterOperation.class
+org\example\utils\RgbMaster.class
+org\example\functions\ImageOperation.class
