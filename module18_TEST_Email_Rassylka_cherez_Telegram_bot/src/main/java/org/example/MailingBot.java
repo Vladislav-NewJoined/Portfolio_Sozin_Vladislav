@@ -1,7 +1,6 @@
 package org.example;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -10,12 +9,6 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class MailingBot extends TelegramLongPollingBot {
-    private final String BOT_TOKEN = "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64";
-    
-    public MailingBot() {
-        super(new DefaultBotOptions(), "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64");
-    }
-    
     private final List<String> emailList = new ArrayList<>();
     private boolean waitingForEmails = false;
     private boolean waitingForMessage = false;
@@ -26,34 +19,44 @@ public class MailingBot extends TelegramLongPollingBot {
         return "BES_Mailing_bot";
     }
 
-    
+    @Override
+    public String getBotToken() {
+        return "7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64";
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
+        System.out.println("Получено обновление: " + update);
+
         if (!update.hasMessage() || !update.getMessage().hasText()) {
+            System.out.println("Обновление не содержит текстового сообщения");
             return;
         }
 
         long chatId = update.getMessage().getChatId();
         String userInput = update.getMessage().getText();
 
-        if ("/start".equals(userInput)) {
-            resetState(chatId);
-            return;
-        } 
-        
-        if (waitingForEmails) {
-            processEmailList(chatId, userInput);
-            return;
-        } 
-        
-        if (waitingForMessage) {
-            processMessage(chatId, userInput);
-            return;
+        System.out.println("Получено сообщение: '" + userInput + "' от пользователя с chatId: " + chatId);
+
+        try {
+            if ("/start".equals(userInput)) {
+                System.out.println("Обработка команды /start");
+                resetState(chatId);
+                System.out.println("Команда /start обработана успешно");
+            } else if (waitingForEmails) {
+                System.out.println("Обработка списка email-адресов");
+                processEmailList(chatId, userInput);
+            } else if (waitingForMessage) {
+                System.out.println("Обработка текста сообщения");
+                processMessage(chatId, userInput);
+            }
+        } catch (Exception e) {
+            System.err.println("Ошибка при обработке сообщения: " + e.getMessage());
+            e.printStackTrace();
+
+            // Отправляем сообщение об ошибке пользователю
+            sendMessage(chatId, "❌ Произошла ошибка: " + e.getMessage());
         }
-        
-        // Если не распознали команду, предложим начать сначала
-        sendMessage(chatId, "Используйте команду /start для начала работы");
     }
 
     private void resetState(long chatId) {
