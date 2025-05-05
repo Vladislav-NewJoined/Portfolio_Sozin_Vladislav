@@ -6,6 +6,20 @@ README_ИНСТРУКЦИЯ
 Проект с настройками деплоя здесь: https://dashboard.render.com/web/srv-d0ackd0gjchc73caru7g/deploys/dep-d0bg10hr0fns73de2f40?r=2025-05-04%4005%3A51%3A03%7E2025-05-04%4005%3A54%3A15
 Логин: sozin.vladislav@mail.ru
 Пароль предоставляется по запросу soo' ... ... .... . A ren
+
+Правильные настройки ENVIRONMENT VARIABLES:
+BOT_TOKEN=7658983765:AAFaNCkR8D5O74u-YkMVZyjxuePRXY1NZ64
+SMTP_HOST=smtp.mail.ru
+SMTP_PORT=465
+SMTP_USERNAME=sozin.vladislav@mail.ru
+SMTP_PASSWORD=XE2u0sb8qFyJttebpXuK
+EMAIL_FROM=sozin.vladislav@mail.ru
+MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
+SPRING_PROFILES_ACTIVE=prod
+PORT=8080
+JAVA_OPTS=-Xmx512m
+
 Данные Телеграм бота:
 Название этого бота (переименованное, просто для меня в списке ботов):
 Mailing_bot
