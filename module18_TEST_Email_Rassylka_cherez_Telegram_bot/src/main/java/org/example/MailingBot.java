@@ -11,7 +11,9 @@ import java.util.concurrent.CompletableFuture;
 public class MailingBot extends TelegramLongPollingBot {
     private final List<String> emailList = new ArrayList<>();
     private boolean waitingForEmails = false;
+    private boolean waitingForSubject = false;
     private boolean waitingForMessage = false;
+    private String emailSubject = "";
     private static final int MAX_EMAILS_PER_REQUEST = 100;
 
     @Override
@@ -46,6 +48,9 @@ public class MailingBot extends TelegramLongPollingBot {
             } else if (waitingForEmails) {
                 System.out.println("Обработка списка email-адресов");
                 processEmailList(chatId, userInput);
+            } else if (waitingForSubject) {
+                System.out.println("Обработка темы сообщения");
+                processSubject(chatId, userInput);
             } else if (waitingForMessage) {
                 System.out.println("Обработка текста сообщения");
                 processMessage(chatId, userInput);
@@ -61,7 +66,9 @@ public class MailingBot extends TelegramLongPollingBot {
 
     private void resetState(long chatId) {
         emailList.clear();
+        emailSubject = "";
         waitingForEmails = true;
+        waitingForSubject = false;
         waitingForMessage = false;
         sendMessage(chatId, "📩 Введите список email-адресов (каждый с новой строки):");
     }
@@ -91,6 +98,19 @@ public class MailingBot extends TelegramLongPollingBot {
         }
 
         waitingForEmails = false;
+        waitingForSubject = true;
+        sendMessage(chatId, "📝 Теперь введите тему сообщения:");
+    }
+
+    private void processSubject(long chatId, String subject) {
+        emailSubject = subject.trim();
+
+        if (emailSubject.isEmpty()) {
+            sendMessage(chatId, "⚠️ Тема сообщения не может быть пустой. Пожалуйста, введите тему:");
+            return;
+        }
+
+        waitingForSubject = false;
         waitingForMessage = true;
         sendMessage(chatId, "✍️ Теперь введите текст сообщения:");
     }
@@ -98,7 +118,7 @@ public class MailingBot extends TelegramLongPollingBot {
     private void processMessage(long chatId, String messageText) {
         sendMessage(chatId, "⏳ Идет рассылка " + emailList.size() + " писем...");
 
-        SendEmail.sendEmailsAsync(emailList, messageText)
+        SendEmail.sendEmailsAsync(emailList, emailSubject, messageText)
                 .thenRun(() -> {
                     sendMessage(chatId, "✅ Рассылка успешно завершена!");
                     clearState();
@@ -112,7 +132,9 @@ public class MailingBot extends TelegramLongPollingBot {
 
     private void clearState() {
         emailList.clear();
+        emailSubject = "";
         waitingForEmails = false;
+        waitingForSubject = false;
         waitingForMessage = false;
     }
 

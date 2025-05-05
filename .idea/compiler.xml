@@ -24,7 +24,7 @@
         <module name="module04_Task6_Kalkulyator" />
         <module name="module08_Task6_Mnogopotocnost" />
       </profile>
-      <profile name="Annotation profile for Portfolio_Sozin_Vladislav2" enabled="true">
+      <profile name="Annotation profile for Portfolio_Sozin_Vladislav" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -32,6 +32,15 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="module17_TEST_Calorie-Tracker" />
+      </profile>
+      <profile name="Annotation profile for module19_TEST_FullstackRazrabotchik" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
         <module name="module19_TEST_FullstackRazrabotchik" />
       </profile>
     </annotationProcessing>

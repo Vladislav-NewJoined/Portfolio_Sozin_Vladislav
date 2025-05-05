@@ -1,5 +1,6 @@
 README_ИНСТРУКЦИЯ
 
+
 Инструкция, как делать рассылку в Телеграм боте:
 Надо зайти в Телеграм в этот бот:
 @BES_Mailing_bot  или ссылка: https://t.me/BES_Mailing_bot
@@ -13,8 +14,6 @@ sozin.vladislav@gmail.com
 )
 
 В конце дождаться сообщения: "Сообщения успешно отправлены"
-
-В ОДНОЙ РАССЫЛКЕ ДОЛЖНО БЫТЬ НЕ БОЛЕЕ 100 АДРЕСОВ EMAIL
 
 Если Deploy "заснул", нужно зайти в Deploy, сюда:
 https://dashboard.render.com/web/srv-d0ackd0gjchc73caru7g/deploys/dep-d0bg10hr0fns73de2f40?r=2025-05-04%4005%3A51%3A03%7E2025-05-04%4005%3A54%3A15
