@@ -14,6 +14,8 @@ sozin.vladislav@gmail.com
 
 В конце дождаться сообщения: "Сообщения успешно отправлены"
 
+В ОДНОЙ РАССЫЛКЕ ДОЛЖНО БЫТЬ НЕ БОЛЕЕ 100 АДРЕСОВ EMAIL
+
 Если Deploy "заснул", нужно зайти в Deploy, сюда:
 https://dashboard.render.com/web/srv-d0ackd0gjchc73caru7g/deploys/dep-d0bg10hr0fns73de2f40?r=2025-05-04%4005%3A51%3A03%7E2025-05-04%4005%3A54%3A15
 логин: sozin.vladislav@mail.ru
