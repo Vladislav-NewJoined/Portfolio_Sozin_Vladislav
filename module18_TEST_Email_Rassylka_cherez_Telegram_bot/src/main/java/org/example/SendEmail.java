@@ -1,14 +1,16 @@
 package org.example;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.io.File;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.*;
 
 public class SendEmail {
-    // Удаляем метод main, так как вы его не используете
-
     private static final String HOST = "smtp.mail.ru";
     private static final String PORT = "465";
     private static final String USERNAME = "sozin.vladislav@mail.ru";
@@ -17,12 +19,19 @@ public class SendEmail {
     private static final ExecutorService emailExecutor =
             Executors.newFixedThreadPool(5);
 
+    // Обновляем существующий метод, чтобы он поддерживал старые вызовы
     public static CompletableFuture<Void> sendEmailsAsync(List<String> emails, String subject, String text) {
+        return sendEmailsAsync(emails, subject, text, null, null);
+    }
+
+    // Добавляем новый метод с поддержкой вложений и изображений
+    public static CompletableFuture<Void> sendEmailsAsync(List<String> emails, String subject, String text,
+                                                          File attachment, File inlineImage) {
         return CompletableFuture.runAsync(() -> {
             try {
                 Session session = createSession();
                 for (String email : emails) {
-                    sendSingleEmail(session, email, subject, text);
+                    sendSingleEmail(session, email, subject, text, attachment, inlineImage);
                     Thread.sleep(DELAY_BETWEEN_EMAILS_MS);
                 }
             } catch (Exception e) {
@@ -47,13 +56,64 @@ public class SendEmail {
         });
     }
 
+    // Обновляем существующий метод, чтобы он поддерживал старые вызовы
     private static void sendSingleEmail(Session session, String toEmail, String subject, String text)
             throws MessagingException {
+        sendSingleEmail(session, toEmail, subject, text, null, null);
+    }
+
+    private static void sendSingleEmail(Session session, String toEmail, String subject, String text,
+                                        File attachment, File inlineImage) throws MessagingException {
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(USERNAME));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
         message.setSubject(subject);
-        message.setText(text);
+
+        // Если нет ни вложений, ни встроенных изображений, отправляем простой текст
+        if (attachment == null && inlineImage == null) {
+            message.setText(text);
+            Transport.send(message);
+            return;
+        }
+
+        // Создаем multipart сообщение
+        Multipart multipart = new MimeMultipart("related");
+
+        // Первая часть - текст/HTML
+        BodyPart messageBodyPart = new MimeBodyPart();
+
+        // Если есть встроенное изображение, используем HTML
+        if (inlineImage != null) {
+            String htmlContent = text + "<br><br><img src=\"cid:image\">";
+            messageBodyPart.setContent(htmlContent, "text/html; charset=utf-8");
+            multipart.addBodyPart(messageBodyPart);
+
+            // Добавляем изображение
+            messageBodyPart = new MimeBodyPart();
+            DataSource fds = new FileDataSource(inlineImage);
+            messageBodyPart.setDataHandler(new DataHandler(fds));
+            messageBodyPart.setHeader("Content-ID", "<image>");
+            messageBodyPart.setDisposition(MimeBodyPart.INLINE);
+            multipart.addBodyPart(messageBodyPart);
+        } else {
+            // Просто текст
+            messageBodyPart.setText(text);
+            multipart.addBodyPart(messageBodyPart);
+        }
+
+        // Добавляем вложение, если оно есть
+        if (attachment != null) {
+            MimeBodyPart attachmentPart = new MimeBodyPart();
+            DataSource source = new FileDataSource(attachment);
+            attachmentPart.setDataHandler(new DataHandler(source));
+            attachmentPart.setFileName(attachment.getName());
+            multipart.addBodyPart(attachmentPart);
+        }
+
+        // Устанавливаем содержимое сообщения
+        message.setContent(multipart);
+
+        // Отправляем сообщение
         Transport.send(message);
     }
 
