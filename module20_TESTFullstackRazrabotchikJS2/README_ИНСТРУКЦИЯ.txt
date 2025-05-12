@@ -5,11 +5,6 @@ https://two50424120testfullstackrazrabotchikjs2.onrender.com/
 Эта версия размещена на платформе Netlify и всегда содержит актуальную версию проекта.
 
 Запуск приложения
-Если в IntelliJ IDEA, то вверху, там где Run^ выбрать: Start JS Server -> и зелёный треугольник - Run
-Или этой командой в терминале: Start JS Server (команда из двух строк):
-cd module20_TESTFullstackRazrabotchikJS2
-npm start
-
 Откройте проект в VS Code.
 Убедитесь, что у вас установлены необходимые расширения для работы с HTML, CSS и JavaScript.
 Для локального запуска можно использовать расширение Live Server:
