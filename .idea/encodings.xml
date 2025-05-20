@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$USER_HOME$/src/main/java" charset="UTF-8" />
+    <file url="file://$USER_HOME$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module01_Task3_Tetris/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module01_Task3_Tetris/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module03_Task10_Zmeyka/src/main/java" charset="UTF-8" />
@@ -43,6 +45,14 @@
     <file url="file://$PROJECT_DIR$/module21_MyLaravelApp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module22_TESTTetrikaJuniorPythonProject/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module22_TESTTetrikaJuniorPythonProject/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module23_SpringCitatnikRuneta/module23_SpringCitatnikRuneta/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module23_SpringCitatnikRuneta/module23_SpringCitatnikRuneta/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module23_SpringCitatnikRuneta/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module23_SpringCitatnikRuneta/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module24_SpringJPA/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module24_SpringJPA/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

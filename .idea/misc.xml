@@ -9,11 +9,15 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/module18_TEST_Email_Rassylka_cherez_Telegram_bot/pom.xml" />
+        <option value="$PROJECT_DIR$/module23_SpringCitatnikRuneta/pom.xml" />
+        <option value="$PROJECT_DIR$/module24_SpringJPA/pom.xml" />
+        <option value="$PROJECT_DIR$/module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/module18_TEST_Email_Rassylka_cherez_Telegram_bot/pom.xml" />
+        <option value="$PROJECT_DIR$/module23_SpringCitatnikRuneta/module23_SpringCitatnikRuneta/pom.xml" />
       </set>
     </option>
   </component>

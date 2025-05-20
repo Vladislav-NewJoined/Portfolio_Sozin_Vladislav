@@ -30,6 +30,9 @@
         <module>module20_TESTFullstackRazrabotchikJS2</module>
         <module>module21_MyLaravelApp</module>
         <module>module22_TESTTetrikaJuniorPythonProject</module>
+        <module>module23_SpringCitatnikRuneta</module>
+        <module>module24_SpringJPA</module>
+        <module>module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov</module>
     </modules>
 
     <properties>
