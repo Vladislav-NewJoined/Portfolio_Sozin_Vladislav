@@ -31,12 +31,15 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="module17_TEST_Calorie-Tracker" />
         <module name="module19_TEST_FullstackRazrabotchik" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="module22_TESTTetrikaJuniorPythonProject" target="23" />
+      <module name="Portfolio_Sozin_Vladislav (1)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

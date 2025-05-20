@@ -29,6 +29,7 @@
         <module>module19_TEST_FullstackRazrabotchik</module>
         <module>module20_TESTFullstackRazrabotchikJS2</module>
         <module>module21_MyLaravelApp</module>
+        <module>module22_TESTTetrikaJuniorPythonProject</module>
     </modules>
 
     <properties>
