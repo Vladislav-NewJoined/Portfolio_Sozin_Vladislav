@@ -34,6 +34,10 @@
         <module>module24_SpringJPA</module>
         <module>module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov</module>
         <module>module26_Python_Data_Engineer</module>
+        <module>module27_SQLite</module>
+        <module>module28_Docker</module>
+        <module>module29_protokol_HTTP</module>
+        <module>module30_Filtr_po_annotatcii</module>
     </modules>
 
     <properties>
