@@ -33,6 +33,7 @@
         <module>module23_SpringCitatnikRuneta</module>
         <module>module24_SpringJPA</module>
         <module>module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov</module>
+        <module>module26_Python_Data_Engineer</module>
     </modules>
 
     <properties>

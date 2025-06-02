@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>task14_4_1</groupId>
-	<artifactId>n240719_Module14_Task4_Zadaniya1-5</artifactId>
+	<artifactId>module24_SpringJPA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootJpaPostgresqlApplication</name>
 	<description>Demo project for Spring Boot</description>

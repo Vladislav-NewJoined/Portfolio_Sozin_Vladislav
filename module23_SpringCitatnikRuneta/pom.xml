@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.example</groupId> <!-- Здесь можно указать другой корректный groupId -->
-    <artifactId>n240719_Module14_Task5_Zadaniya1-8_Project</artifactId>
+    <artifactId>module23_SpringCitatnikRuneta</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

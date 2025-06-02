@@ -29,6 +29,7 @@
         <module name="module04_Task6_Krestiki-noliki" />
         <module name="module01_Task3_Tetris" />
         <module name="module04_Task6_Kalkulyator" />
+        <module name="module26_Python_Data_Engineer" />
         <module name="module25_veb-kontrollery_v_SpringMVC_ObrabotkaHTTP-zaprosov" />
         <module name="module08_Task6_Mnogopotocnost" />
       </profile>
@@ -44,7 +45,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="module26_TEST_Python_Junior_Data_Engineer" target="23" />
       <module name="Portfolio_Sozin_Vladislav (1)" target="17" />
+      <module name="Portfolio_Sozin_Vladislav (2)" target="23" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
